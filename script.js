@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const section_title = document.querySelector('.section_title')
     console.log(section_title)
     const about_me_section = document.querySelector('.about_me_section')
+    const projects_section = document.querySelector('.projects_section')
 
     const timeline = gsap.timeline()
 
@@ -84,4 +85,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
             duration: 0.6
         })
     })
+
+
+    const project_one = document.querySelector('.project_one') 
+    const project_one_title = document.querySelector('.project_one_title')
+    const project_one_img = document.querySelector('.project_one_img')
+    const project_one_desc = document.querySelector('.project_one_desc')
+    const project_one_skills = document.querySelector('.project_one_skills')
+
+    fetch('./json/info.json')
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+            project_one_title.textContent = data.project_one.name
+            project_one_img.src = data.project_one.image
+            project_one_desc.textContent = data.project_one.about
+            data.project_one.skills.forEach(skill => {
+                const span = document.createElement("span")
+                span.textContent = `#${skill} ` 
+                project_one_skills.appendChild(span)
+            });
+        })
+
+
 });
