@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     
     const section_title = document.querySelector('.section_title')
-    console.log(section_title)
+
     const about_me_section = document.querySelector('.about_me_section')
     const projects_section = document.querySelector('.projects_section')
+    const contact_section = document.querySelector('.contact_section')
 
     const timeline = gsap.timeline()
 
@@ -74,7 +75,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
                     about_me_section.classList.remove('hidden')
+
                     projects_section.classList.add('hidden')
+                    contact_section.classList.add('hidden')
                 }
             }
         })
@@ -90,13 +93,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (projects_section.classList.contains('hidden')) {
                     projects_section.classList.remove('hidden')
+
                     about_me_section.classList.add('hidden')
+                    contact_section.classList.add('hidden')
                 }
             }
         })
 
         tl.to(section_title, {
             text: 'Latest Projects',
+            duration: 1
+        })
+    })
+
+    option_three.addEventListener('click', () => {
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                if (contact_section.classList.contains('hidden')) {
+                    contact_section.classList.remove('hidden')
+
+                    about_me_section.classList.add('hidden')
+                    projects_section.classList.add('hidden')
+                }
+            }
+        })
+
+        tl.to(section_title, {
+            text: 'Get In Touch!',
             duration: 1
         })
     })
