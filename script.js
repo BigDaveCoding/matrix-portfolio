@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const red_pill = document.querySelector('.red_pill')
     const blue_pill = document.querySelector('.blue_pill') 
+    const pill_parent_div = document.querySelector('.pill_parent_div')
 
-    const red_pill_bool = false
-    const blue_pill_bool = false
+    let red_pill_bool = false
+    let blue_pill_bool = false
 
 
     const hero_question = document.querySelector('.hero_question')
@@ -84,7 +85,48 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //     duration: 0.6
     // })
 
+    function redPill() {
+        const tl = gsap.timeline()
+
+        tl.to(option_one, {
+        opacity: 1,
+        duration: 0.6
+        })
+        .to(option_two, {
+            opacity: 1,
+            duration: 0.6
+        })
+        .to(option_three, {
+            opacity: 1,
+            duration: 0.6
+        })
+        
+    }
+
     red_pill.addEventListener('click', () => {
+
+        if (!red_pill_bool && !blue_pill_bool) {
+            red_pill_bool = true
+            blue_pill_bool = false
+        }
+        
+        if (red_pill_bool) {
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    pill_parent_div.classList.add('hidden')
+                    redPill()
+                }
+            })
+            
+            tl.to(pill_parent_div, {
+                opacity: 0,
+                duration: 0.4
+            })
+
+        }
+    })
+
+    blue_pill.addEventListener('click', () => {
 
     })
 
