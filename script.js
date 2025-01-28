@@ -74,15 +74,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
                     about_me_section.classList.remove('hidden')
-                } else {
+                    projects_section.classList.add('hidden')
+                }
+            }
+        })
+        tl.to(section_title, {
+            text: 'Learn About Me',
+            duration: 1
+        })
+    })
+
+    option_two.addEventListener('click', () => {
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                if (projects_section.classList.contains('hidden')) {
+                    projects_section.classList.remove('hidden')
                     about_me_section.classList.add('hidden')
                 }
             }
         })
 
         tl.to(section_title, {
-            text: 'Learn About Me',
-            duration: 0.6
+            text: 'Latest Projects',
+            duration: 1
         })
     })
 
