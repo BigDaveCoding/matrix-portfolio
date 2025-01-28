@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
     const hero_question = document.querySelector('.hero_question')
+
+    const user_options = document.querySelector('.user_options')
+
     const option_one = document.querySelector('.option_one')
     const option_two = document.querySelector('.option_two')
     const option_three = document.querySelector('.option_three')
@@ -127,6 +130,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
     blue_pill.addEventListener('click', () => {
+        if (!blue_pill_bool && !red_pill_bool) {
+            blue_pill_bool = true
+            red_pill_bool = true
+        }
+
+        if (blue_pill_bool) {
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    pill_parent_div.classList.add('hidden')
+                    user_options.classList.add('hidden')
+
+                }
+            })
+
+            tl.to(pill_parent_div, {
+                opacity: 0, 
+                duration: 0.4
+            })
+            tl.to(hero_question, {
+                opacity: 0,
+                duration: 0.4
+            })
+        }
 
     })
 
