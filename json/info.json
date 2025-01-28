@@ -1,0 +1,24 @@
+{
+    "about_me": "I'm a Software Developer with a passion for web development, data analytics, and game development. Right now, I'm studying the Software Developer Course at iO Academy, where I'm learning a whole bunch of exciting concepts and working on some cool projects.",
+    "project_one": {
+        "name": "PokéAPI Search",
+        "about": "Enables users to search for any Pokémon by name. The application seamlessly connects to the PokeAPI to retrieve detailed information, including stats, abilities, types, and images. The fetched data is displayed in an intuitive and user-friendly interface, making it easy for users to explore and learn about their favorite Pokémon.",
+        "image": "../images/pixel_pokemon.png",
+        "alt": "",
+        "skills": ["JavaScript", "TailwindCSS", "API's", "React"]
+    },
+    "project_two": {
+        "name" : "KANKEI",
+        "about" : "I designed and developed a website for KANKEI Ltd., a leadership consultancy firm, focused on delivering a clean, professional, and modern user experience. The project began with creating responsive templates using HTML, CSS, and JavaScript, incorporating GSAP for smooth and engaging animations. During the design phase, I utilized Figma to craft wireframes and prototypes, ensuring alignment with the client’s vision. Ultimately, the website was migrated to WordPress to provide the client with enhanced functionality and ease of content management. ",
+        "image" : "../images/kankei_website.png",
+        "alt" : "",
+        "skills" : ["Web Dev", "Responsive Design", "GSAP", "Client Communication"]
+    },
+    "project_three": {
+        "name" : "project name",
+        "about" : "Here is a random description of the project. It allows you to do this and that and it works without any complications because I'm amazing at coding... right?",
+        "image" : "../images/tree-lake-stars.jpg",
+        "alt" : "",
+        "skills" : ["skill 1", "skill 2", "skill 3"]
+    }
+}
