@@ -14,15 +14,15 @@
 <body class="bg-black text-green-700 p-2" style="font-family:'Share Tech Mono';">
 
     <header class="grid grid-cols-[3fr_1fr]">
-        <p class="title text-2xl"><i class="fa-solid fa-handshake"></i></p>
+        <p class="header_text text-3xl"></p>
     </header>
 
     <section>
-        <div class="hero_info opacity-0 py-4">
-            <div class="border-t-2 border-b-green-700 border-dashed p-2"></div>
-            <h1 class="text-4xl text-center">My Name Is David.</h1>
-            <p class="text-center">I am a software Developer <i class="fa-regular fa-floppy-disk"></i></p>
-            <div class="border-b-2 border-b-green-700 border-dashed p-2"></div>
+        <div class="py-4">
+            <div class="hero_top_border border-t-2 border-b-green-700 border-dashed p-2"></div>
+            <h1 class="hero_title text-4xl text-center"></h1>
+            <p class="hero_subtitle text-center"></p>
+            <div class="hero_bottom_border border-b-2 border-b-green-700 border-dashed p-2"></div>
         </div>
         <h2 class="hero_question"></h2>
         <div class="grid grid-cols-3">
@@ -39,6 +39,36 @@
                 <h4 class="">Contact</h4>
             </div>
         </div>
+    </section>
+
+    <h2 class="section_title text-3xl text-center py-6">About Me</h2>
+
+    <section class="about_me_section">
+        <p class="about_me_intro">
+            I began my journey into software development with a curiosity for video games, creating simple games in Unity without much prior knowledge.
+            Initially, I had no idea how to code, so I decided to dive into the world of programming through a little self-research. 
+            After some Googling, I stumbled upon The Odin Project and completed their foundations course, which gave me a solid understanding of web development. 
+            Eager to build on my skills, I then explored data analytics & computer science through Codecademy, further honing my technical abilities. 
+            <br />
+            Today, I'm pushing myself even further by enrolling in iO Academy's intensive 12-week Software Developer course, 
+            where I continue to expand my coding knowledge and experience.
+        </p>
+        <h5 class="text-center text-3xl py-4">Fun Facts</h5>
+        <div class="grid grid-cols-1 gap-y-3">
+            <div class="grid grid-cols-[1fr_5fr] items-center">
+                <i class="text-2xl text-center fa-solid fa-dog"></i>
+                <p>I love taking my dog Pablo for walks—he’s a beach lover and also enjoys long hikes through nature </p>
+            </div>
+            <div class="grid grid-cols-[1fr_5fr] items-center">
+                <i class="text-2xl text-center fa-solid fa-gamepad"></i>
+                <p>Video Games are a huge passion of mine. From Pokémon to Gears Of War, I love em all!</p>
+            </div>
+            <div class="grid grid-cols-[1fr_5fr] items-center">
+                <i class="text-2xl text-center fa-solid fa-mug-hot"></i>
+                <p>I am realy into specialty coffee. My favourite coffees tend to be naturals as they are usually funky and interesting.</p>
+            </div>
+        </div>
+        
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
