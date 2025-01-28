@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const hero_subtitle = document.querySelector('.hero_subtitle')
     const hero_bottom_border = document.querySelector('.hero_bottom_border')
 
+    const red_pill = document.querySelector('.red_pill')
+    const blue_pill = document.querySelector('.blue_pill') 
+
+    const red_pill_bool = false
+    const blue_pill_bool = false
+
+
     const hero_question = document.querySelector('.hero_question')
     const option_one = document.querySelector('.option_one')
     const option_two = document.querySelector('.option_two')
@@ -56,17 +63,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
         text: "Please select an option...",
         duration: 1
     })
-    .to(option_one, {
+    .to(red_pill, {
         opacity: 1,
         duration: 0.6
     })
-    .to(option_two, {
+    .to(blue_pill, {
         opacity: 1,
         duration: 0.6
     })
-    .to(option_three, {
-        opacity: 1,
-        duration: 0.6
+    // .to(option_one, {
+    //     opacity: 1,
+    //     duration: 0.6
+    // })
+    // .to(option_two, {
+    //     opacity: 1,
+    //     duration: 0.6
+    // })
+    // .to(option_three, {
+    //     opacity: 1,
+    //     duration: 0.6
+    // })
+
+    red_pill.addEventListener('click', () => {
+
     })
 
     option_one.addEventListener('click', () => {
