@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function redPill() {
         const tl = gsap.timeline()
+        error_message.classList.add('hidden')
 
         tl.to(option_one, {
         opacity: 1,
