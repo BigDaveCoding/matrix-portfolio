@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let blue_pill_bool = false
 
     const its_all_lies = document.querySelector('.its_all_lies')
+    const error_message = document.querySelector('.error_message')
 
 
     const hero_question = document.querySelector('.hero_question')
@@ -108,16 +109,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
         
     }
 
-    function bluePill() {
-        const array_of_lies = [
-            "I invented Google",
-            "I have 73+ Years experience Coding", 
-            "I can read a 539 page book in two minutes",
-            "I can run a mile in 4 minutes", 
-            "I can run 2 miles in 3 minutes"
-        ];
+    const array_of_lies = [
+        "I invented Google.",
+        "I have 73+ Years experience Coding.",
+        "I invented Faceb00k",
+        "I 0wn a Siber1an T1ger",
+        "I ca1 r0ad a 539 page b1ok i0 two m01utes.",
+        "1 c00 r1n a m01e in 4 m010tes.", 
+        "I 1a0 01n 2 m1l0s in 3 m01u00s.",
+        "0 10s se01 11001 10100",
+        "0010 100 111001 101010000",
+        "1100 00101 101000 000111 101001 0100"
+    ];
 
-        const timeline = gsap.timeline()
+    function bluePill() {
+        
+        const timeline = gsap.timeline({
+            onComplete: () => {
+                bluePillTwo()
+            }
+        })
 
         array_of_lies.forEach(lie => {
             const span = document.createElement("span")
@@ -125,10 +136,37 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             timeline.to(span, {
                 text: lie,
-                duration: 2
+                duration: 0.8
             });
         });
 
+    }
+
+    function bluePillTwo() {
+        console.log(`blue pill two function`)
+        its_all_lies.classList.add('hidden')
+
+        gsap.to(error_message, {
+            opacity: 1, 
+            duration: 0.2,
+            repeat: 9, 
+            yoyo: true,
+            onComplete: () => {
+                console.log(`Flashing completed`);
+
+                user_options.classList.remove('hidden')
+
+                gsap.to(hero_question, {
+                    opacity: 1,
+                    duration: 0.5
+                })
+
+                error_message.classList.add('hidden')
+
+                redPill()
+            }
+        });
+        
     }
 
     red_pill.addEventListener('click', () => {
