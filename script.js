@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const option_two = document.querySelector('.option_two')
     const option_three = document.querySelector('.option_three')
 
+    
+    const section_title = document.querySelector('.section_title')
+    console.log(section_title)
+    const about_me_section = document.querySelector('.about_me_section')
+
     const timeline = gsap.timeline()
 
     timeline.to(header_text, {
@@ -62,4 +67,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 0.6
     })
 
+    option_one.addEventListener('click', () => {
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                if (about_me_section.classList.contains('hidden')) {
+                    about_me_section.classList.remove('hidden')
+                } else {
+                    about_me_section.classList.add('hidden')
+                }
+            }
+        })
+
+        tl.to(section_title, {
+            text: 'Learn About Me',
+            duration: 0.6
+        })
+    })
 });
