@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let red_pill_bool = false
     let blue_pill_bool = false
 
+    const its_all_lies = document.querySelector('.its_all_lies')
+
 
     const hero_question = document.querySelector('.hero_question')
 
@@ -106,6 +108,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
         
     }
 
+    function bluePill() {
+        const array_of_lies = [
+            "I invented Google",
+            "I have 73+ Years experience Coding", 
+            "I can read a 539 page book in two minutes",
+            "I can run a mile in 4 minutes", 
+            "I can run 2 miles in 3 minutes"
+        ];
+
+        const timeline = gsap.timeline()
+
+        array_of_lies.forEach(lie => {
+            const span = document.createElement("span")
+            its_all_lies.appendChild(span);
+
+            timeline.to(span, {
+                text: lie,
+                duration: 2
+            });
+        });
+
+    }
+
     red_pill.addEventListener('click', () => {
 
         if (!red_pill_bool && !blue_pill_bool) {
@@ -140,6 +165,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 onComplete: () => {
                     pill_parent_div.classList.add('hidden')
                     user_options.classList.add('hidden')
+                    bluePill()
 
                 }
             })
