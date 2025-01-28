@@ -1,7 +1,7 @@
 {
     "about_me": "I'm a Software Developer with a passion for web development, data analytics, and game development. Right now, I'm studying the Software Developer Course at iO Academy, where I'm learning a whole bunch of exciting concepts and working on some cool projects.",
     "project_one": {
-        "name": "PokéAPI Search",
+        "name": "PokéAPI",
         "about": "Enables users to search for any Pokémon by name. The application seamlessly connects to the PokeAPI to retrieve detailed information, including stats, abilities, types, and images. The fetched data is displayed in an intuitive and user-friendly interface, making it easy for users to explore and learn about their favorite Pokémon.",
         "image": "../images/pixel_pokemon.png",
         "alt": "",
@@ -17,7 +17,7 @@
     "project_three": {
         "name" : "project name",
         "about" : "Here is a random description of the project. It allows you to do this and that and it works without any complications because I'm amazing at coding... right?",
-        "image" : "../images/tree-lake-stars.jpg",
+        "image" : "../images/pixel_pokemon.png",
         "alt" : "",
         "skills" : ["skill 1", "skill 2", "skill 3"]
     }
