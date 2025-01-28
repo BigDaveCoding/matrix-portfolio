@@ -99,6 +99,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const project_two_desc = document.querySelector('.project_two_desc')
     const project_two_skills = document.querySelector('.project_two_skills')
 
+    const project_three = document.querySelector('.project_three') 
+    const project_three_title = document.querySelector('.project_three_title')
+    const project_three_img = document.querySelector('.project_three_img')
+    const project_three_desc = document.querySelector('.project_three_desc')
+    const project_three_skills = document.querySelector('.project_three_skills')
+
     fetch('./json/info.json')
         .then(response => response.json())
         .then((data) => {
@@ -120,6 +126,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 const span = document.createElement("span")
                 span.textContent = `#${skill} ` 
                 project_two_skills.appendChild(span)
+            });
+
+            project_three_title.textContent = data.project_three.name
+            project_three_img.src = data.project_three.image
+            project_three_desc.textContent = data.project_three.about
+            data.project_three.skills.forEach(skill => {
+                const span = document.createElement("span")
+                span.textContent = `#${skill} ` 
+                project_three_skills.appendChild(span)
             });
 
             
