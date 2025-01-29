@@ -402,17 +402,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function turnCharDifferentColor(index_array, section) {
         let text_array = section.textContent.split('')
+        let delay = 0
 
         index_array.forEach(i => {
-            text_array[i] = `<span class ="text-amber-300">${text_array[i]}</span>`
+            setTimeout(() => {
+                text_array[i] = `<span class ="text-amber-300">${text_array[i]}</span>`
+                section.innerHTML = text_array.join('')
+            }, delay)
+            delay += 100
         })
-
-        section.innerHTML = text_array.join('')
     }
 
     function revertCharToOriginal(index_array, section) {
         let text_array = section.textContent.split('')
-
+        
         index_array.forEach(i => {
             text_array[i] = `${text_array[i]}`
         })
@@ -427,19 +430,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let count = 0
         let char_array = []
 
-        while (count < (section.textContent.length / 100)) {
+        while (count < 25) {
             let rn = generateRandomNumber(section.textContent.length)
             console.log(section.textContent[rn])
             char_array.push(rn)
             count += 1       
         }
+        char_array.sort()
         console.log(char_array)
+        
         turnCharDifferentColor(char_array, section)
 
         setTimeout(() => {
             revertCharToOriginal(char_array, section)
 
-        }, 1000)
+        }, 2500)
         
 
     };
