@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <script defer src="./script.js"></script>
 </head>
-<body class="bg-black text-green-700 p-2 max-w-[1024px] mx-auto" style="font-family:'Share Tech Mono';">
+<body class="bg-black text-green-600 p-2 max-w-[1024px] mx-auto min-h-screen flex flex-col" style="font-family:'Share Tech Mono';">
 
     <header class="grid grid-cols-[3fr_1fr]">
         <p class="header_text text-3xl"></p>
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <div class="user_options grid grid-cols-1 pt-6">
+        <div class="user_options grid grid-cols-1 pt-6 lg:grid-cols-3">
             <div class="option_one opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer">
                 <i class="text-2xl p-2 fa-regular fa-face-smile"></i>
                 <h4 class="">About Me</h4>
@@ -99,9 +99,11 @@
         <div class="project_one">
             <div class="border-t-2 border-dashed border-green-700 py-2"></div>
             <p>(01)</p>
-            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-1 md:py-2 lg:grid-cols-[2fr_5fr]">
+            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-6 md:py-2 lg:grid-cols-[2fr_5fr]">
                 
-                <img class="project_one_img" src="" alt="" />
+                <div class="flex justify-center items-center">
+                    <img class="project_one_img w-10/12" src="" alt="" />
+                </div>
 
                 <div class="flex flex-col justify-between">
                     <div class="flex gap-4 items-center">
@@ -122,10 +124,10 @@
         <div class="project_two">
             <div class="border-t-2 border-dashed border-green-700 py-2"></div>
             <p>(02)</p>
-            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-1 md:py-2 lg:grid-cols-[2fr_5fr]">
+            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-6 md:py-2 lg:grid-cols-[2fr_5fr]">
 
                 <div class="flex justify-center items-center">
-                    <img class="project_two_img" src="" alt="" />
+                    <img class="project_two_img w-10/12" src="" alt="" />
                 </div>
 
                 <div class="flex flex-col justify-between">
@@ -146,9 +148,11 @@
         <div class="project_three">
             <div class="border-t-2 border-dashed border-green-700 py-2"></div>
             <p>(03)</p>
-            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-1 md:py-2 lg:grid-cols-[2fr_5fr]">
+            <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-6 md:py-2 lg:grid-cols-[2fr_5fr]">
 
-                <img class="project_three_img" src="" alt="" />
+                <div class="flex justify-center items-center">
+                    <img class="project_three_img w-10/12" src="" alt="" />
+                </div>
 
                 <div class="flex flex-col justify-between">
                     <div class="flex gap-4 items-center">
@@ -190,6 +194,13 @@
             <input class="border-2 border-green-700 rounded bg-green-950 text-white p-2" type="submit" id="submit" value="Send" />
         </form>
     </section>
+
+    <footer class="mt-auto max-w-[1024px] w-full mx-auto">
+        <div class="border-2 border-dashed"></div>
+        <div>
+            <p>&copy; BigDaveCoding</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
