@@ -401,7 +401,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     function randomColor(){
-        const array_colors = ['text-amber-300', 'text-red-300', 'text-blue-300']
+        const array_colors = ['text-amber-200', 'text-orange-200', 'text-violet-100']
         const random_index = Math.floor(Math.random() * array_colors.length)
         console.log(array_colors[random_index])
         return array_colors[random_index]
@@ -456,6 +456,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     };
 
-    randomCharColorChange(about_me_intro)
+    // randomCharColorChange(about_me_intro)
 
 });
