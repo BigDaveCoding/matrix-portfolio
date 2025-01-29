@@ -395,10 +395,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const about_me_intro = document.querySelector('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
-    console.log(fun_facts)
-    console.log(fun_facts.textContent)
-    // console.log(about_me_intro)
-    // console.log(about_me_intro.textContent)
 
     function generateRandomNumber(x) {
         const r_n = Math.floor(Math.random() * x)
@@ -440,14 +436,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let count = 0
         let char_array = []
 
-        while (count < (section.textContent.length / 25)) {
+        while (count < 15) {
             let rn = generateRandomNumber(section.textContent.length)
             // console.log(section.textContent[rn])
             char_array.push(rn)
             count += 1       
         }
         char_array.sort()
-        console.log(char_array)
+        // console.log(char_array)
         
         turnCharDifferentColor(char_array, section)
 
