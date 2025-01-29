@@ -275,6 +275,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
+                    randomCharColorChange(about_me_intro)
                     about_me_section.classList.remove('hidden')
 
                     projects_section.classList.add('hidden')
@@ -434,7 +435,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
         console.log(char_array)
         turnCharDifferentColor(char_array, section)
-        revertCharToOriginal(char_array, section)
+
+        setTimeout(() => {
+            revertCharToOriginal(char_array, section)
+
+        }, 1000)
+        
 
     };
 
