@@ -1836,6 +1836,10 @@
     font-size: var(--text-8xl);
     line-height: var(--tw-leading, var(--text-8xl--line-height));
   }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -1917,6 +1921,9 @@
   .\[color\:red\]\/50\! {
     color: color-mix(in oklab, red 50%, transparent) !important;
   }
+  .text-amber-300 {
+    color: var(--color-amber-300);
+  }
   .text-amber-400 {
     color: var(--color-amber-400);
   }
@@ -1928,6 +1935,9 @@
   }
   .text-blue-700 {
     color: var(--color-blue-700);
+  }
+  .text-cyan-300 {
+    color: var(--color-cyan-300);
   }
   .text-emerald-800 {
     color: var(--color-emerald-800);
@@ -1947,6 +1957,9 @@
   .text-green-800 {
     color: var(--color-green-800);
   }
+  .text-orange-400 {
+    color: var(--color-orange-400);
+  }
   .text-red-500 {
     color: var(--color-red-500);
   }
@@ -1958,6 +1971,12 @@
   }
   .text-red-800 {
     color: var(--color-red-800);
+  }
+  .text-sky-300 {
+    color: var(--color-sky-300);
+  }
+  .text-sky-600 {
+    color: var(--color-sky-600);
   }
   .text-white {
     color: var(--color-white);
@@ -2474,6 +2493,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-green-500);
+      }
+    }
+  }
+  .hover\:text-amber-400 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-amber-400);
       }
     }
   }
