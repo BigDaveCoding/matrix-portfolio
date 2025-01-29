@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <script defer src="./script.js"></script>
 </head>
-<body class="bg-black text-green-600 p-2 max-w-[1024px] mx-auto min-h-screen flex flex-col" style="font-family:'Share Tech Mono';">
+<body class="bg-black text-green-500 p-2 max-w-[1024px] mx-auto min-h-screen flex flex-col" style="font-family:'Share Tech Mono';">
 
     <header class="grid grid-cols-[3fr_1fr]">
         <p class="header_text text-3xl"></p>
@@ -24,10 +24,10 @@
 
     <section>
         <div class="py-4">
-            <div class="hero_top_border border-t-2 border-b-green-700 border-dashed p-2"></div>
+            <div class="hero_top_border border-t-2 border-dashed p-2"></div>
             <h1 class="hero_title text-4xl text-center"></h1>
             <p class="hero_subtitle text-center"></p>
-            <div class="hero_bottom_border border-b-2 border-b-green-700 border-dashed p-2"></div>
+            <div class="hero_bottom_border border-b-2 border-dashed p-2"></div>
         </div>
 
         <h2 class="hero_question"></h2>
@@ -45,15 +45,18 @@
         </div>
 
         <div class="user_options grid grid-cols-1 pt-6 lg:grid-cols-3">
-            <div class="option_one opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer">
+            <div class="option_one opacity-100 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer
+                        hover:bg-amber-200 hover:text-black transition duration-500">
                 <i class="text-2xl p-2 fa-regular fa-face-smile"></i>
                 <h4 class="">About Me</h4>
             </div>
-            <div class="option_two opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer">
+            <div class="option_two opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer
+                        hover:bg-amber-200 hover:text-black transition duration-500">
                 <i class="text-2xl p-2 fa-regular fa-folder-open"></i>
                 <h4 class="">Projects</h4>
             </div>
-            <div class="option_three opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer">
+            <div class="option_three opacity-0 flex flex-col justify-center items-center p-2 m-1 border-2 rounded-lg cursor-pointer
+                        hover:bg-amber-200 hover:text-black transition duration-500">
                 <i class="text-2xl p-2 fa-solid fa-mobile-retro"></i>
                 <h4 class="">Contact</h4>
             </div>
@@ -122,7 +125,7 @@
         </div>
 
         <div class="project_two">
-            <div class="border-t-2 border-dashed border-green-700 py-2"></div>
+            <div class="border-t-2 border-dashed py-2"></div>
             <p>(02)</p>
             <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-6 md:py-2 lg:grid-cols-[2fr_5fr]">
 
@@ -146,7 +149,7 @@
         </div>
 
         <div class="project_three">
-            <div class="border-t-2 border-dashed border-green-700 py-2"></div>
+            <div class="border-t-2 border-dashed py-2"></div>
             <p>(03)</p>
             <div class="md:grid md:grid-cols-[3fr_5fr] md:gap-6 md:py-2 lg:grid-cols-[2fr_5fr]">
 
@@ -168,7 +171,7 @@
 
             </div>
 
-            <div class="border-t-2 border-dashed border-green-700"></div>
+            <!-- <div class="border-t-2 border-dashed"></div> -->
         </div>
 
     </section>
@@ -196,9 +199,11 @@
     </section>
 
     <footer class="mt-auto max-w-[1024px] w-full mx-auto">
-        <div class="border-2 border-dashed"></div>
+        <div class="border-t-2 border-dashed"></div>
         <div>
             <p>&copy; BigDaveCoding</p>
+            <p><i class="fa-solid fa-envelope"></i> -- Send me an email!</p>
+            <p><i class="fa-solid fa-file-pdf"></i> -- Download my CV</p>
         </div>
     </footer>
 
