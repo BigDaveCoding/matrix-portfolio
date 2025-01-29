@@ -70,26 +70,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
         text: "Please select an option...",
         duration: 1
     })
-    .to(red_pill, {
+    // .to(red_pill, {
+    //     opacity: 1,
+    //     duration: 0.6
+    // })
+    // .to(blue_pill, {
+    //     opacity: 1,
+    //     duration: 0.6
+    // })
+    .to(option_one, {
         opacity: 1,
         duration: 0.6
     })
-    .to(blue_pill, {
+    .to(option_two, {
         opacity: 1,
         duration: 0.6
     })
-    // .to(option_one, {
-    //     opacity: 1,
-    //     duration: 0.6
-    // })
-    // .to(option_two, {
-    //     opacity: 1,
-    //     duration: 0.6
-    // })
-    // .to(option_three, {
-    //     opacity: 1,
-    //     duration: 0.6
-    // })
+    .to(option_three, {
+        opacity: 1,
+        duration: 0.6
+    })
 
     function redPill() {
         const tl = gsap.timeline()
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
         tl.to(section_title, {
             text: 'Learn About Me',
-            duration: 1
+            duration: 0
         })
     })
 
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         tl.to(section_title, {
             text: 'Latest Projects',
-            duration: 1
+            duration: 0
         })
     })
 
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         tl.to(section_title, {
             text: 'Get In Touch!',
-            duration: 1
+            duration: 0
         })
     })
 
