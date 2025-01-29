@@ -276,6 +276,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if (about_me_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
                     randomCharColorChange(about_me_intro)
+                    fun_facts.forEach(fun_fact => {
+                        randomCharColorChange(fun_fact)
+                    })
                     about_me_section.classList.remove('hidden')
 
                     projects_section.classList.add('hidden')
@@ -391,8 +394,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         })
 
     const about_me_intro = document.querySelector('.about_me_intro')
-    console.log(about_me_intro)
-    console.log(about_me_intro.textContent)
+    const fun_facts = document.querySelectorAll('.fun_facts')
+    console.log(fun_facts)
+    console.log(fun_facts.textContent)
+    // console.log(about_me_intro)
+    // console.log(about_me_intro.textContent)
 
     function generateRandomNumber(x) {
         const r_n = Math.floor(Math.random() * x)
@@ -403,7 +409,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function randomColor(){
         const array_colors = ['text-amber-200', 'text-orange-200', 'text-violet-100']
         const random_index = Math.floor(Math.random() * array_colors.length)
-        console.log(array_colors[random_index])
+        // console.log(array_colors[random_index])
         return array_colors[random_index]
     }
 
@@ -412,34 +418,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let delay = 0
 
         index_array.forEach(i => {
+            // Change the color of the character and set a timeout for reverting it back
             setTimeout(() => {
-                text_array[i] = `<span class ="${randomColor()}">${text_array[i]}</span>`
-                section.innerHTML = text_array.join('')
-            }, delay)
-            delay += 100
-        })
-    }
+                text_array[i] = `<span class ="${randomColor()}">${text_array[i]}</span>`;
+                section.innerHTML = text_array.join('');
+    
+                setTimeout(() => {
+                    text_array[i] = text_array[i].replace(/<span[^>]*>([^<]*)<\/span>/, '$1');
+                    section.innerHTML = text_array.join('');
+                }, 500); 
 
-    function revertCharToOriginal(index_array, section) {
-        let text_array = section.textContent.split('')
-
-        index_array.forEach(i => {
-            text_array[i] = `${text_array[i]}`
-        })
-
-        section.innerHTML = text_array.join('')
-        
+            }, delay);
+    
+            delay += 100;
+        });
     }
 
     function randomCharColorChange(section) {
-        console.log(section.textContent.length)
+        // console.log(section.textContent.length)
 
         let count = 0
         let char_array = []
 
-        while (count < 25) {
+        while (count < (section.textContent.length / 25)) {
             let rn = generateRandomNumber(section.textContent.length)
-            console.log(section.textContent[rn])
+            // console.log(section.textContent[rn])
             char_array.push(rn)
             count += 1       
         }
@@ -447,12 +450,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log(char_array)
         
         turnCharDifferentColor(char_array, section)
-
-        setTimeout(() => {
-            revertCharToOriginal(char_array, section)
-
-        }, 2500)
-        
 
     };
 
