@@ -225,11 +225,56 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     })
 
+    let option_one_bool = false
+    let option_two_bool = false
+    let option_three_bool = false
+
+    console.log(option_one)
+
+    function adjustOptionDisplay() {
+
+        if (option_one_bool) {
+            //set style of option one
+            option_one.classList.add('bg-amber-400')
+            option_one.classList.add('text-black')
+        } else {
+            //revert back to original style
+            option_one.classList.remove('bg-amber-400')
+            option_one.classList.remove('text-black')
+        }
+
+        if (option_two_bool) {
+            //set style of option two
+            option_two.classList.add('bg-amber-400')
+            option_two.classList.add('text-black')
+        } else {
+            //revert back to original style
+            option_two.classList.remove('bg-amber-400')
+            option_two.classList.remove('text-black')
+        }
+
+        if (option_three_bool) {
+            //set style of option one
+            option_three.classList.add('bg-amber-400')
+            option_three.classList.add('text-black')
+        } else {
+            //revert back to original style
+            option_three.classList.remove('bg-amber-400')
+            option_three.classList.remove('text-black')
+        }
+
+
+    }
+
     option_one.addEventListener('click', () => {
+        option_one_bool = true
+        option_two_bool = false
+        option_three_bool = false
 
         const tl = gsap.timeline({
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
+                    adjustOptionDisplay()
                     about_me_section.classList.remove('hidden')
 
                     projects_section.classList.add('hidden')
@@ -244,10 +289,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
     option_two.addEventListener('click', () => {
+        option_one_bool = false
+        option_two_bool = true
+        option_three_bool = false
 
         const tl = gsap.timeline({
             onComplete: () => {
                 if (projects_section.classList.contains('hidden')) {
+                    adjustOptionDisplay()
                     projects_section.classList.remove('hidden')
 
                     about_me_section.classList.add('hidden')
@@ -263,10 +312,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
     option_three.addEventListener('click', () => {
+        option_one_bool = false
+        option_two_bool = false
+        option_three_bool = true
 
         const tl = gsap.timeline({
             onComplete: () => {
                 if (contact_section.classList.contains('hidden')) {
+                    adjustOptionDisplay()
                     contact_section.classList.remove('hidden')
 
                     about_me_section.classList.add('hidden')
