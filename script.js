@@ -389,5 +389,55 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         })
 
+    const about_me_intro = document.querySelector('.about_me_intro')
+    console.log(about_me_intro)
+    console.log(about_me_intro.textContent)
+
+    function generateRandomNumber(x) {
+        const r_n = Math.floor(Math.random() * x)
+        // console.log(r_n)
+        return r_n
+    }
+
+    function turnCharDifferentColor(index_array, section) {
+        let text_array = section.textContent.split('')
+
+        index_array.forEach(i => {
+            text_array[i] = `<span class ="text-amber-300">${text_array[i]}</span>`
+        })
+
+        section.innerHTML = text_array.join('')
+    }
+
+    function revertCharToOriginal(index_array, section) {
+        let text_array = section.textContent.split('')
+
+        index_array.forEach(i => {
+            text_array[i] = `${text_array[i]}`
+        })
+
+        section.innerHTML = text_array.join('')
+        
+    }
+
+    function randomCharColorChange(section) {
+        console.log(section.textContent.length)
+
+        let count = 0
+        let char_array = []
+
+        while (count < (section.textContent.length / 100)) {
+            let rn = generateRandomNumber(section.textContent.length)
+            console.log(section.textContent[rn])
+            char_array.push(rn)
+            count += 1       
+        }
+        console.log(char_array)
+        turnCharDifferentColor(char_array, section)
+        revertCharToOriginal(char_array, section)
+
+    };
+
+    randomCharColorChange(about_me_intro)
 
 });
