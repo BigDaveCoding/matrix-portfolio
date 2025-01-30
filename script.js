@@ -333,7 +333,33 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Will use interval to manipulate when randomCharColorChnage runs
     setInterval(() => {
         console.log(`interval`)
-        randomCharColorChange(about_me_intro)
+
+        switch(getBoolValue()) {
+            case 'one':
+                console.log(`case one`)
+                randomCharColorChange(about_me_intro)
+                break;
+            case 'two':
+                randomCharColorChange(about_me_intro);
+                break;
+            case 'three':
+                randomCharColorChange(about_me_intro);
+                break;
+            default:
+                console.log(`no option selected`)
+        }
     }, 10000)
+
+    function getBoolValue() {
+        if (option_one_bool){
+            return 'one'
+        } else if (option_two_bool){
+            return 'two'
+        } else if (option_three_bool) {
+            return 'three'
+        } else{
+            return false
+        }
+    }
 
 });
