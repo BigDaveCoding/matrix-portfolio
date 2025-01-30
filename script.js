@@ -35,7 +35,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let proj_desc = []
     
     const contact_text = document.querySelectorAll('.contact_text')
-    console.log(contact_text)
+    // console.log(contact_text)
+
+    const social_icons = document.querySelectorAll('.social_icon')
+    const social_icon_text = document.querySelectorAll('.social_icon_text')
+    console.log(social_icons)
+    console.log(social_icon_text)
 
     const timeline = gsap.timeline()
 
@@ -428,5 +433,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
             })
         })
     }
+
+    social_icons.forEach((icon, index) => {
+        icon.addEventListener('mouseover', () => {
+            social_icon_text[index].classList.add('text-amber-300')
+        })
+
+        icon.addEventListener('mouseleave', () => {
+            social_icon_text[index].classList.remove('text-amber-300')
+        })
+    })
 
 });
