@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             }
         })
         tl.to(section_title, {
-            text: 'Learn About Me',
+            text: 'About Me',
             duration: 0
         })
     })
