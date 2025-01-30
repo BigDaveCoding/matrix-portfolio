@@ -9,7 +9,7 @@
     },
     "project_two": {
         "name" : "KANKEI",
-        "about" : "I designed and developed a website for KANKEI Ltd., a leadership consultancy firm, focused on delivering a clean, professional, and modern user experience. The project began with creating responsive templates using HTML, CSS, and JavaScript, incorporating GSAP for smooth and engaging animations. During the design phase, I utilized Figma to craft wireframes and prototypes, ensuring alignment with the client’s vision. Ultimately, the website was migrated to WordPress to provide the client with enhanced functionality and ease of content management. ",
+        "about" : "I designed and developed a website for KANKEI Ltd., a leadership consultancy firm, focused on delivering a clean, professional, and modern user experience. The project began with creating responsive templates using HTML, CSS, and JavaScript, incorporating GSAP for smooth and engaging animations. During the design phase, I utilized Figma to craft wireframes and prototypes, ensuring alignment with the client’s vision. Ultimately, the website was migrated to WordPress to provide the client with enhanced functionality and ease of content management",
         "image" : "./images/kankei_logo.png",
         "alt" : "",
         "skills" : ["Web-Dev", "Responsive Design", "GSAP", "Client Communication"]
