@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Using .to and .fromTo
     timeline.to(header_text, {
         text: `<i class="fa-solid fa-handshake"></i> Welcome!`,
-        duration: 1
+        duration: 0.6
     })
     .fromTo(hero_top_border, {
         x: 500, 
@@ -62,11 +62,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
     .to(hero_title, {
         text: 'My Name Is David.',
-        duration: 1.2
+        duration: 1
     })
     .to(hero_subtitle, {
         text: `I am a software Developer <i class="fa-regular fa-floppy-disk"></i>`,
-        duration: 1.2
+        duration: 1
     })
     .fromTo(hero_bottom_border, {
         x: -500,
@@ -82,15 +82,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
     .to(option_one, {
         opacity: 1,
-        duration: 0.6
+        duration: 0.4
     })
     .to(option_two, {
         opacity: 1,
-        duration: 0.6
+        duration: 0.4
     })
     .to(option_three, {
         opacity: 1,
-        duration: 0.6
+        duration: 0.4
     }) 
 
     // These Bools will be used to control the display of 'options'
@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             default:
                 console.log(`no option selected for interval switch statement`)
         }
-    }, 20000)
+    }, 30000)
 
     // Function that returns values to be used in the switch statement
     function getBoolValue() {
