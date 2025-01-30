@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const projects_section = document.querySelector('.projects_section')
     const contact_section = document.querySelector('.contact_section')
 
+    const about_me_intro = document.querySelector('.about_me_intro')
+    const fun_facts = document.querySelectorAll('.fun_facts')
+
     const timeline = gsap.timeline()
 
     // This timeline runs through the opening animations of the webpage.
@@ -265,8 +268,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         })
 
-    const about_me_intro = document.querySelector('.about_me_intro')
-    const fun_facts = document.querySelectorAll('.fun_facts')
 
     // Function that returns a random number between 0 and argument 'x'
     function generateRandomNumber(x) {
@@ -334,7 +335,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         turnCharDifferentColor(char_array, section)
 
     };
-
-    // randomCharColorChange(about_me_intro)
 
 });
