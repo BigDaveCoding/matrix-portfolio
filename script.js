@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 if (projects_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
 
-                    // runForEachColorChange(project_descriptions)
+                    runForEachColorChange(proj_desc)
 
                     projects_section.classList.remove('hidden')
 
@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 runForEachColorChange(about_me_intro, fun_facts)
                 break;
             case 'two':
-                // runForEachColorChange(project_descriptions);
+                runForEachColorChange(proj_desc);
                 break;
             case 'three':
                 randomCharColorChange(about_me_intro);
