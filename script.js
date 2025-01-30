@@ -328,4 +328,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     };
 
+
+    // Runs every 10 seconds
+    // Will use interval to manipulate when randomCharColorChnage runs
+    setInterval(() => {
+        console.log(`interval`)
+        randomCharColorChange(about_me_intro)
+    }, 10000)
+
 });
