@@ -139,11 +139,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const tl = gsap.timeline({
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
+
                     adjustOptionDisplay()
-                    // randomCharColorChange(about_me_intro)
-                    fun_facts.forEach(fun_fact => {
-                        randomCharColorChange(fun_fact)
-                    })
+                    runForEachColorChange(about_me_intro, fun_facts)
+                    
                     about_me_section.classList.remove('hidden')
 
                     projects_section.classList.add('hidden')
