@@ -238,15 +238,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             project_one_title.textContent = data.project_one.name
             project_one_img.src = data.project_one.image
-            // project_one_desc.textContent = data.project_one.about
+            
+            const proj_one_desc_sentence_array = data.project_one.about.split('.')
 
-            // console.log(data.project_one.about)
-            // console.log(data.project_one.about.length)
-
-            const desc_sentence_array = data.project_one.about.split('.')
-            // console.log(desc_sentence_array)
-
-            desc_sentence_array.forEach(sentence => {
+            proj_one_desc_sentence_array.forEach(sentence => {
                 // console.log(sentence)
                 const span = document.createElement("span")
                 span.classList.add('project_description')
@@ -256,16 +251,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 // console.log(proj_desc)
             })
 
-
             data.project_one.skills.forEach(skill => {
                 const span = document.createElement("span")
                 span.textContent = `#${skill} ` 
                 project_one_skills.appendChild(span)
             });
 
+
             project_two_title.textContent = data.project_two.name
             project_two_img.src = data.project_two.image
-            project_two_desc.textContent = data.project_two.about
+
+            const proj_two_desc_sentence_array = data.project_two.about.split('.')
+
+            proj_two_desc_sentence_array.forEach(sentence => {
+                // console.log(sentence)
+                const span = document.createElement("span")
+                span.classList.add('project_description')
+                span.textContent = sentence + '.'
+                project_two_desc.appendChild(span)
+                proj_desc.push(span)
+                // console.log(proj_desc)
+            })
+
+
             data.project_two.skills.forEach(skill => {
                 const span = document.createElement("span")
                 span.textContent = `#${skill} ` 
@@ -274,14 +282,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             project_three_title.textContent = data.project_three.name
             project_three_img.src = data.project_three.image
-            project_three_desc.textContent = data.project_three.about
+
+            const proj_three_desc_sentence_array = data.project_three.about.split('.')
+
+            proj_three_desc_sentence_array.forEach(sentence => {
+                // console.log(sentence)
+                const span = document.createElement("span")
+                span.classList.add('project_description')
+                span.textContent = sentence + '.'
+                project_three_desc.appendChild(span)
+                proj_desc.push(span)
+            })
+
+
             data.project_three.skills.forEach(skill => {
                 const span = document.createElement("span")
                 span.textContent = `#${skill} ` 
                 project_three_skills.appendChild(span)
             });
 
-            
+            console.log(proj_desc)
 
         })
 
