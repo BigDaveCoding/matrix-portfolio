@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // variables for running randomCharColorChange. 
     // Should use querySelectorAll and run forEach loops on them
-    
+
     const about_me_intro = document.querySelector('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
 
@@ -353,6 +353,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     }, 10000)
 
+    // Function that returns values to be used in the switch statement
     function getBoolValue() {
         if (option_one_bool){
             return 'one'
