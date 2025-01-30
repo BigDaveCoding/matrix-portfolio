@@ -31,7 +31,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const fun_facts = document.querySelectorAll('.fun_facts')
     // const project_descriptions = document.querySelectorAll('.project_description')
 
+    // Variable declareed which will store spans from json fetch
     let proj_desc = []
+    
+    const contact_text = document.querySelectorAll('.contact_text')
+    console.log(contact_text)
 
     const timeline = gsap.timeline()
 
@@ -194,6 +198,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (contact_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
+
+                    runForEachColorChange(contact_text)
+
                     contact_section.classList.remove('hidden')
 
                     about_me_section.classList.add('hidden')
@@ -387,7 +394,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 runForEachColorChange(proj_desc);
                 break;
             case 'three':
-                randomCharColorChange(about_me_intro);
+                runForEachColorChange(contact_text)
                 break;
             default:
                 console.log(`no option selected for interval switch statement`)
