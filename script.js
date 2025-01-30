@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     //Function to return a random color from an array of predefined colors
     function randomColor(){
-        const array_colors = ['text-sky-300', 'text-white', 'text-violet-100']
+        const array_colors = ['text-yellow-300', 'text-white', 'text-blue-300']
         const random_index = Math.floor(Math.random() * array_colors.length)
         // console.log(array_colors[random_index])
         return array_colors[random_index]
@@ -436,11 +436,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     social_icons.forEach((icon, index) => {
         icon.addEventListener('mouseover', () => {
-            social_icon_text[index].classList.add('text-amber-300')
+            social_icon_text[index].classList.add('text-yellow-300')
         })
 
         icon.addEventListener('mouseleave', () => {
-            social_icon_text[index].classList.remove('text-amber-300')
+            social_icon_text[index].classList.remove('text-yellow-300')
         })
     })
 

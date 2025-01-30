@@ -2057,6 +2057,9 @@
   .text-violet-100 {
     color: var(--color-violet-100);
   }
+  .text-violet-300 {
+    color: var(--color-violet-300);
+  }
   .text-violet-700 {
     color: var(--color-violet-700);
   }
@@ -2563,6 +2566,13 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-black);
+      }
+    }
+  }
+  .hover\:text-yellow-300 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-yellow-300);
       }
     }
   }
