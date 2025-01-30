@@ -1570,6 +1570,9 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-green-600 {
+    background-color: var(--color-green-600);
+  }
   .bg-green-950 {
     background-color: var(--color-green-950);
   }
@@ -2151,6 +2154,9 @@
   }
   .underline-offset-4 {
     text-underline-offset: 4px;
+  }
+  .underline-offset-6 {
+    text-underline-offset: 6px;
   }
   .underline-offset-auto {
     text-underline-offset: auto;

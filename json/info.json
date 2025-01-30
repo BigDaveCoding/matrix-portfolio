@@ -17,7 +17,7 @@
     "project_three": {
         "name" : "project name",
         "about" : "Here is a random description of the project. It allows you to do this and that and it works without any complications because I'm amazing at coding... right?",
-        "image" : "./images/pixel_pokemon.png",
+        "image" : "./images/placeholder.png",
         "alt" : "",
         "skills" : ["skill 1", "skill 2", "skill 3"]
     }
