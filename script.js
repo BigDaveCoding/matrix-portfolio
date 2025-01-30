@@ -29,8 +29,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Should use querySelectorAll and run forEach loops on them
     const about_me_intro = document.querySelectorAll('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
-    const project_descriptions = document.querySelectorAll('.project_description')
-    console.log(project_descriptions)
+    // const project_descriptions = document.querySelectorAll('.project_description')
+
+    let proj_desc = []
 
     const timeline = gsap.timeline()
 
@@ -237,7 +238,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             project_one_title.textContent = data.project_one.name
             project_one_img.src = data.project_one.image
-            project_one_desc.textContent = data.project_one.about
+            // project_one_desc.textContent = data.project_one.about
+
+            // console.log(data.project_one.about)
+            // console.log(data.project_one.about.length)
+
+            const desc_sentence_array = data.project_one.about.split('.')
+            // console.log(desc_sentence_array)
+
+            desc_sentence_array.forEach(sentence => {
+                // console.log(sentence)
+                const span = document.createElement("span")
+                span.classList.add('project_description')
+                span.textContent = sentence + '.'
+                project_one_desc.appendChild(span)
+                proj_desc.push(span)
+                // console.log(proj_desc)
+            })
+
+
             data.project_one.skills.forEach(skill => {
                 const span = document.createElement("span")
                 span.textContent = `#${skill} ` 
@@ -373,11 +392,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // within forEach runs through values within inner_arrays using a forEach
     // runs randomColorChange those!
     function runForEachColorChange(...array){
-        console.log(array)
+        // console.log(array)
         array.forEach(inner_arr => {
-            console.log(inner_arr)
+            // console.log(inner_arr)
             inner_arr.forEach(val => {
-                console.log(val)
+                // console.log(val)
                 randomCharColorChange(val)
             })
         })
