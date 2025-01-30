@@ -1996,6 +1996,15 @@
   .text-red-800 {
     color: var(--color-red-800);
   }
+  .text-rose-300 {
+    color: var(--color-rose-300);
+  }
+  .text-rose-400 {
+    color: var(--color-rose-400);
+  }
+  .text-rose-500 {
+    color: var(--color-rose-500);
+  }
   .text-sky-300 {
     color: var(--color-sky-300);
   }

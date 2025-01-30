@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                     adjustOptionDisplay()
                     runForEachColorChange(about_me_intro, fun_facts)
-                    
+
                     about_me_section.classList.remove('hidden')
 
                     projects_section.classList.add('hidden')
@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     //Function to return a random color from an array of predefined colors
     function randomColor(){
-        const array_colors = ['text-amber-200', 'text-orange-200', 'text-violet-100']
+        const array_colors = ['text-sky-300', 'text-white', 'text-violet-100']
         const random_index = Math.floor(Math.random() * array_colors.length)
         // console.log(array_colors[random_index])
         return array_colors[random_index]
@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             default:
                 console.log(`no option selected for interval switch statement`)
         }
-    }, 10000)
+    }, 20000)
 
     // Function that returns values to be used in the switch statement
     function getBoolValue() {
