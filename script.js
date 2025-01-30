@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         duration: 0.4
     })
     .to(hero_title, {
-        text: 'My Name Is David.',
+        text: 'My Name Is David',
         duration: 1
     })
     .to(hero_subtitle, {
@@ -108,31 +108,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         if (option_one_bool) {
             //set style of option one
-            option_one.classList.add('bg-amber-400')
+            option_one.classList.add('bg-yellow-200')
             option_one.classList.add('text-black')
         } else {
             //revert back to original style
-            option_one.classList.remove('bg-amber-400')
+            option_one.classList.remove('bg-yellow-200')
             option_one.classList.remove('text-black')
         }
 
         if (option_two_bool) {
             //set style of option two
-            option_two.classList.add('bg-amber-400')
+            option_two.classList.add('bg-yellow-200')
             option_two.classList.add('text-black')
         } else {
             //revert back to original style
-            option_two.classList.remove('bg-amber-400')
+            option_two.classList.remove('bg-yellow-200')
             option_two.classList.remove('text-black')
         }
 
         if (option_three_bool) {
             //set style of option one
-            option_three.classList.add('bg-amber-400')
+            option_three.classList.add('bg-yellow-200')
             option_three.classList.add('text-black')
         } else {
             //revert back to original style
-            option_three.classList.remove('bg-amber-400')
+            option_three.classList.remove('bg-yellow-200')
             option_three.classList.remove('text-black')
         }
 
