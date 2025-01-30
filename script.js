@@ -340,7 +340,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         switch(getBoolValue()) {
             case 'one':
                 console.log(`case one`)
-                randomCharColorChange(about_me_intro)
+                // randomCharColorChange(about_me_intro)
+                runForEachColorChnage(fun_facts)
                 break;
             case 'two':
                 randomCharColorChange(about_me_intro);
@@ -364,6 +365,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         } else{
             return false
         }
+    }
+
+    function runForEachColorChnage(...array){
+        console.log(array)
+        array.forEach(inner_arr => {
+            inner_arr.forEach(val => {
+                randomCharColorChange(val)
+            })
+        })
     }
 
 });
