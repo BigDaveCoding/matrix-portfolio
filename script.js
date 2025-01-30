@@ -9,18 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const hero_title = document.querySelector('.hero_title')
     const hero_subtitle = document.querySelector('.hero_subtitle')
     const hero_bottom_border = document.querySelector('.hero_bottom_border')
-
-    const red_pill = document.querySelector('.red_pill')
-    const blue_pill = document.querySelector('.blue_pill') 
-    const pill_parent_div = document.querySelector('.pill_parent_div')
-
-    let red_pill_bool = false
-    let blue_pill_bool = false
-
-    const its_all_lies = document.querySelector('.its_all_lies')
-    const error_message = document.querySelector('.error_message')
-
-
+ 
     const hero_question = document.querySelector('.hero_question')
 
     const user_options = document.querySelector('.user_options')
@@ -89,147 +78,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .to(option_three, {
         opacity: 1,
         duration: 0.6
-    })
-
-    function redPill() {
-        const tl = gsap.timeline()
-        error_message.classList.add('hidden')
-
-        tl.to(option_one, {
-        opacity: 1,
-        duration: 0.6
-        })
-        .to(option_two, {
-            opacity: 1,
-            duration: 0.6
-        })
-        .to(option_three, {
-            opacity: 1,
-            duration: 0.6
-        })
-        
-    }
-
-    const array_of_lies = [
-        "I invented Google.",
-        "I have 73+ Years experience Coding.",
-        "I invented Facebo0k.",
-        "I 0wn a Siberian T1ger.",
-        "I ca1 r0ad a 539 page b1ok i0 two m01utes.",
-        "0 10s se01 11001 10100.",
-        "I k#n0w 1o3 la/ng^u@ges flu€ntly.",
-        "I 100k 0v#er NASA in 2/*01.",
-        "0#10 c0d€ed */ a g@litching m@chine.",
-        "C0rru#pt3d! D@ta m1nd://} A1gorith#m.",
-        "E#ro12 Co*&de: 1010101010101",
-        "Th*&3 s}yst#m: brea#king.",
-        "}E*1ror! 10000. */",
-        "@@@@@ D@t#a P*0w3r {Gone}!"
-    ];
-
-    function bluePill() {
-        
-        const timeline = gsap.timeline({
-            onComplete: () => {
-                bluePillTwo()
-            }
-        })
-
-        array_of_lies.forEach(lie => {
-            const span = document.createElement("span")
-            its_all_lies.appendChild(span);
-
-            timeline.to(span, {
-                text: lie,
-                duration: 0.6
-            });
-        });
-
-    }
-
-    function bluePillTwo() {
-        console.log(`blue pill two function`)
-        its_all_lies.classList.add('hidden')
-
-        gsap.to(error_message, {
-            opacity: 1, 
-            duration: 0.2,
-            repeat: 9, 
-            yoyo: true,
-            onComplete: () => {
-                console.log(`Flashing completed`);
-
-                user_options.classList.remove('hidden')
-
-                gsap.to(hero_question, {
-                    opacity: 1,
-                    duration: 0.5
-                })
-
-                error_message.classList.add('hidden')
-
-                redPill()
-            }
-        });
-        
-    }
-
-    red_pill.addEventListener('click', () => {
-
-        if (!red_pill_bool && !blue_pill_bool) {
-            red_pill_bool = true
-            blue_pill_bool = false
-        }
-        
-        if (red_pill_bool) {
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    pill_parent_div.classList.add('hidden')
-                    redPill()
-                }
-            })
-            
-            tl.to(pill_parent_div, {
-                opacity: 0,
-                duration: 0.4
-            })
-
-        }
-    })
-
-    blue_pill.addEventListener('click', () => {
-        if (!blue_pill_bool && !red_pill_bool) {
-            blue_pill_bool = true
-            red_pill_bool = true
-        }
-
-        if (blue_pill_bool) {
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    pill_parent_div.classList.add('hidden')
-                    user_options.classList.add('hidden')
-                    bluePill()
-
-                }
-            })
-
-            tl.to(pill_parent_div, {
-                opacity: 0, 
-                duration: 0.4
-            })
-            tl.to(hero_question, {
-                opacity: 0,
-                duration: 0.4
-            })
-        }
-
-    })
+    }) 
 
     let option_one_bool = false
     let option_two_bool = false
     let option_three_bool = false
 
-    console.log(option_one)
+    // console.log(option_one)
 
     function adjustOptionDisplay() {
 
