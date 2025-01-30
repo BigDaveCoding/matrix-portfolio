@@ -9,18 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const hero_title = document.querySelector('.hero_title')
     const hero_subtitle = document.querySelector('.hero_subtitle')
     const hero_bottom_border = document.querySelector('.hero_bottom_border')
-
-    const red_pill = document.querySelector('.red_pill')
-    const blue_pill = document.querySelector('.blue_pill') 
-    const pill_parent_div = document.querySelector('.pill_parent_div')
-
-    let red_pill_bool = false
-    let blue_pill_bool = false
-
-    const its_all_lies = document.querySelector('.its_all_lies')
-    const error_message = document.querySelector('.error_message')
-
-
+ 
     const hero_question = document.querySelector('.hero_question')
 
     const user_options = document.querySelector('.user_options')
@@ -36,8 +25,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const projects_section = document.querySelector('.projects_section')
     const contact_section = document.querySelector('.contact_section')
 
+    const about_me_intro = document.querySelector('.about_me_intro')
+    const fun_facts = document.querySelectorAll('.fun_facts')
+
     const timeline = gsap.timeline()
 
+    // This timeline runs through the opening animations of the webpage.
+    // Creates a timeline using gsap.timeline()
+    // Targets each variable in vertical order and applies an animation to it.
+    // Using .to and .fromTo
     timeline.to(header_text, {
         text: `<i class="fa-solid fa-handshake"></i> Welcome!`,
         duration: 1
@@ -89,148 +85,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .to(option_three, {
         opacity: 1,
         duration: 0.6
-    })
+    }) 
 
-    function redPill() {
-        const tl = gsap.timeline()
-        error_message.classList.add('hidden')
-
-        tl.to(option_one, {
-        opacity: 1,
-        duration: 0.6
-        })
-        .to(option_two, {
-            opacity: 1,
-            duration: 0.6
-        })
-        .to(option_three, {
-            opacity: 1,
-            duration: 0.6
-        })
-        
-    }
-
-    const array_of_lies = [
-        "I invented Google.",
-        "I have 73+ Years experience Coding.",
-        "I invented Facebo0k.",
-        "I 0wn a Siberian T1ger.",
-        "I ca1 r0ad a 539 page b1ok i0 two m01utes.",
-        "0 10s se01 11001 10100.",
-        "I k#n0w 1o3 la/ng^u@ges flu€ntly.",
-        "I 100k 0v#er NASA in 2/*01.",
-        "0#10 c0d€ed */ a g@litching m@chine.",
-        "C0rru#pt3d! D@ta m1nd://} A1gorith#m.",
-        "E#ro12 Co*&de: 1010101010101",
-        "Th*&3 s}yst#m: brea#king.",
-        "}E*1ror! 10000. */",
-        "@@@@@ D@t#a P*0w3r {Gone}!"
-    ];
-
-    function bluePill() {
-        
-        const timeline = gsap.timeline({
-            onComplete: () => {
-                bluePillTwo()
-            }
-        })
-
-        array_of_lies.forEach(lie => {
-            const span = document.createElement("span")
-            its_all_lies.appendChild(span);
-
-            timeline.to(span, {
-                text: lie,
-                duration: 0.6
-            });
-        });
-
-    }
-
-    function bluePillTwo() {
-        console.log(`blue pill two function`)
-        its_all_lies.classList.add('hidden')
-
-        gsap.to(error_message, {
-            opacity: 1, 
-            duration: 0.2,
-            repeat: 9, 
-            yoyo: true,
-            onComplete: () => {
-                console.log(`Flashing completed`);
-
-                user_options.classList.remove('hidden')
-
-                gsap.to(hero_question, {
-                    opacity: 1,
-                    duration: 0.5
-                })
-
-                error_message.classList.add('hidden')
-
-                redPill()
-            }
-        });
-        
-    }
-
-    red_pill.addEventListener('click', () => {
-
-        if (!red_pill_bool && !blue_pill_bool) {
-            red_pill_bool = true
-            blue_pill_bool = false
-        }
-        
-        if (red_pill_bool) {
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    pill_parent_div.classList.add('hidden')
-                    redPill()
-                }
-            })
-            
-            tl.to(pill_parent_div, {
-                opacity: 0,
-                duration: 0.4
-            })
-
-        }
-    })
-
-    blue_pill.addEventListener('click', () => {
-        if (!blue_pill_bool && !red_pill_bool) {
-            blue_pill_bool = true
-            red_pill_bool = true
-        }
-
-        if (blue_pill_bool) {
-            const tl = gsap.timeline({
-                onComplete: () => {
-                    pill_parent_div.classList.add('hidden')
-                    user_options.classList.add('hidden')
-                    bluePill()
-
-                }
-            })
-
-            tl.to(pill_parent_div, {
-                opacity: 0, 
-                duration: 0.4
-            })
-            tl.to(hero_question, {
-                opacity: 0,
-                duration: 0.4
-            })
-        }
-
-    })
-
+    // These Bools will be used to control the display of 'options'
+    // Depending on which is true, it will trigger a function
     let option_one_bool = false
     let option_two_bool = false
     let option_three_bool = false
 
-    console.log(option_one)
+    // console.log(option_one)
 
+    // This function uses if/else statements, checking the value of bools
+    // Depending on which bools are true/false...
+    // It will change the display of the selected option
     function adjustOptionDisplay() {
 
         if (option_one_bool) {
@@ -266,6 +133,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     }
 
+    // Event Listeners which set the values of option bools,
+    // create a GSAP timeline,
+    // Within the gsap timeline they change the text of section_title
+    // and On completion of the timeline, run functions, add and remove classLists
     option_one.addEventListener('click', () => {
         option_one_bool = true
         option_two_bool = false
@@ -339,6 +210,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 
 
+    // Decalring variables for points of contact on HTML page
+    // Will be used within 'fetch'
     const project_one = document.querySelector('.project_one') 
     const project_one_title = document.querySelector('.project_one_title')
     const project_one_img = document.querySelector('.project_one_img')
@@ -357,6 +230,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const project_three_desc = document.querySelector('.project_three_desc')
     const project_three_skills = document.querySelector('.project_three_skills')
 
+    // Fecthing data from a local .json file which includes information about various projects
+    // Assigning that data to the decalred variables above
     fetch('./json/info.json')
         .then(response => response.json())
         .then((data) => {
@@ -393,15 +268,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         })
 
-    const about_me_intro = document.querySelector('.about_me_intro')
-    const fun_facts = document.querySelectorAll('.fun_facts')
 
+    // Function that returns a random number between 0 and argument 'x'
     function generateRandomNumber(x) {
         const r_n = Math.floor(Math.random() * x)
         // console.log(r_n)
         return r_n
     }
 
+    //Function to return a random color from an array of predefined colors
     function randomColor(){
         const array_colors = ['text-amber-200', 'text-orange-200', 'text-violet-100']
         const random_index = Math.floor(Math.random() * array_colors.length)
@@ -409,6 +284,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         return array_colors[random_index]
     }
 
+    // Function that takes an array of index and the section that array has come from
+    // To be used within randomCharColorChange Function.
+    // For example [1,23,432,99], about_me_intro
+    // Chnages the given section into an array of characters using .split()
+    // For each value in index array,
+    // Changes the color of the character at that index in the text array
+    // Reverts back to its original state using .replace and regular expressions
     function turnCharDifferentColor(index_array, section) {
         let text_array = section.textContent.split('')
         let delay = 0
@@ -430,6 +312,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     }
 
+    // Function to control the color change of random characters within a section of textContent
+    // pass in the section as a variable
+    // while loop generates random number using generateRandomNumber()
+    // stores numbers in a array to use in turnCharDifferentColor()
+    // Pass in array and the section passed into this function into turnCharDifferenColor()
     function randomCharColorChange(section) {
         // console.log(section.textContent.length)
 
@@ -448,7 +335,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         turnCharDifferentColor(char_array, section)
 
     };
-
-    // randomCharColorChange(about_me_intro)
 
 });
