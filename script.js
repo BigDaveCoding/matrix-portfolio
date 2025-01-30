@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // variables for running randomCharColorChange. 
     // Should use querySelectorAll and run forEach loops on them
 
-    const about_me_intro = document.querySelector('.about_me_intro')
+    const about_me_intro = document.querySelectorAll('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
 
     const timeline = gsap.timeline()
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (about_me_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
-                    randomCharColorChange(about_me_intro)
+                    // randomCharColorChange(about_me_intro)
                     fun_facts.forEach(fun_fact => {
                         randomCharColorChange(fun_fact)
                     })
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             case 'one':
                 console.log(`case one`)
                 // randomCharColorChange(about_me_intro)
-                runForEachColorChnage(fun_facts)
+                runForEachColorChnage(about_me_intro, fun_facts)
                 break;
             case 'two':
                 randomCharColorChange(about_me_intro);
@@ -367,10 +367,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     }
 
+    // Function that takes arrays and stores them in an array - [[ [],[],[] ], [ [],[] ], [ [] ]
+    // Runs through Each array with forEach
+    // within forEach runs through values within inner_arrays using a forEach
+    // runs randomColorChange those!
     function runForEachColorChnage(...array){
         console.log(array)
         array.forEach(inner_arr => {
+            console.log(inner_arr)
             inner_arr.forEach(val => {
+                console.log(val)
                 randomCharColorChange(val)
             })
         })
