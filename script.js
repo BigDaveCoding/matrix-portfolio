@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Should use querySelectorAll and run forEach loops on them
     const about_me_intro = document.querySelectorAll('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
+    const project_descriptions = document.querySelectorAll('.project_description')
+    console.log(project_descriptions)
 
     const timeline = gsap.timeline()
 
@@ -165,6 +167,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             onComplete: () => {
                 if (projects_section.classList.contains('hidden')) {
                     adjustOptionDisplay()
+
+                    runForEachColorChange(project_descriptions)
+
                     projects_section.classList.remove('hidden')
 
                     about_me_section.classList.add('hidden')
@@ -340,7 +345,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 runForEachColorChange(about_me_intro, fun_facts)
                 break;
             case 'two':
-                randomCharColorChange(about_me_intro);
+                runForEachColorChange(project_descriptions);
                 break;
             case 'three':
                 randomCharColorChange(about_me_intro);
