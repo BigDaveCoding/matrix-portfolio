@@ -66,14 +66,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         text: "Please select an option...",
         duration: 1
     })
-    // .to(red_pill, {
-    //     opacity: 1,
-    //     duration: 0.6
-    // })
-    // .to(blue_pill, {
-    //     opacity: 1,
-    //     duration: 0.6
-    // })
     .to(option_one, {
         opacity: 1,
         duration: 0.6
