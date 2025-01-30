@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // variables for running randomCharColorChange. 
     // Should use querySelectorAll and run forEach loops on them
-
     const about_me_intro = document.querySelectorAll('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
 
@@ -339,9 +338,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         switch(getBoolValue()) {
             case 'one':
-                console.log(`case one`)
-                // randomCharColorChange(about_me_intro)
-                runForEachColorChnage(about_me_intro, fun_facts)
+                runForEachColorChange(about_me_intro, fun_facts)
                 break;
             case 'two':
                 randomCharColorChange(about_me_intro);
@@ -350,7 +347,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 randomCharColorChange(about_me_intro);
                 break;
             default:
-                console.log(`no option selected`)
+                console.log(`no option selected for interval switch statement`)
         }
     }, 10000)
 
@@ -371,7 +368,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Runs through Each array with forEach
     // within forEach runs through values within inner_arrays using a forEach
     // runs randomColorChange those!
-    function runForEachColorChnage(...array){
+    function runForEachColorChange(...array){
         console.log(array)
         array.forEach(inner_arr => {
             console.log(inner_arr)
