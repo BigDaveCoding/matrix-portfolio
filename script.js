@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const projects_section = document.querySelector('.projects_section')
     const contact_section = document.querySelector('.contact_section')
 
+    // variables for running randomCharColorChange. 
+    // Should use querySelectorAll and run forEach loops on them
+    
     const about_me_intro = document.querySelector('.about_me_intro')
     const fun_facts = document.querySelectorAll('.fun_facts')
 
