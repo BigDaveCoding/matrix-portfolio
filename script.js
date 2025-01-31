@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const social_icons = document.querySelectorAll('.social_icon')
     const social_icon_text = document.querySelectorAll('.social_icon_text')
-    console.log(social_icons)
-    console.log(social_icon_text)
+    // console.log(social_icons)
+    // console.log(social_icon_text)
 
     const timeline = gsap.timeline()
 
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     fetch('./json/info.json')
         .then(response => response.json())
         .then((data) => {
-            console.log(data)
+            // console.log(data)
 
             project_one_title.textContent = data.project_one.name
             project_one_img.src = data.project_one.image
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 project_three_skills.appendChild(span)
             });
 
-            console.log(proj_desc)
+            // console.log(proj_desc)
 
         })
 
