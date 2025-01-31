@@ -344,6 +344,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         let text_array = section.textContent.split('')
         let delay = 0
 
+        let original_array = section.textContent.split('')
+
         index_array.forEach(i => {
             // Change the color of the character and set a timeout for reverting it back
             setTimeout(() => {
@@ -351,7 +353,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 section.innerHTML = text_array.join('');
     
                 setTimeout(() => {
-                    text_array[i] = text_array[i].replace(/<span[^>]*>([^<]*)<\/span>/, '$1');
+                    // text_array[i] = text_array[i].replace(/<span[^>]*>([^<]*)<\/span>/, '$1');
+                    text_array[i] = original_array[i]
                     section.innerHTML = text_array.join('');
                 }, 500); 
 
